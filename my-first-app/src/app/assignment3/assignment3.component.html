@@ -3,7 +3,7 @@
 <div *ngFor="let count of countArray">
     <p *ngIf="count<5; else noFive">Button Clicked = {{ count }}</p>
     <ng-template #noFive>
-        <p [ngStyle]="{backgroundColor: getBgColor()}" [ngClass]="{online: !lessFive}">Button Clicked = {{ count }}</p>
+        <p [ngStyle]="{backgroundColor: count>=5 ? 'blue' : ''}" [ngClass]="{online: count>=5}">Button Clicked = {{ count }}</p>
     </ng-template>
 </div>
 

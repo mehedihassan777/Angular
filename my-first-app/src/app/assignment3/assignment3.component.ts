@@ -8,23 +8,15 @@ import { Component } from '@angular/core';
 export class Assignment3Component {
   displayDetailsHide = false;
   buttonClicked = 0;
-  lessFive = true;
   countArray: Array<number> = [];
 
   displayDetails() {
     this.buttonClicked += 1;
     this.countArray.push(this.buttonClicked);
-    if (this.buttonClicked > 4)
-      this.lessFive = false;
     if (this.displayDetailsHide)
       this.displayDetailsHide = false;
     else
       this.displayDetailsHide = true;
   }
 
-  getBgColor() {
-    if (!this.lessFive) {
-      return 'blue';
-    }
-  }
 }
