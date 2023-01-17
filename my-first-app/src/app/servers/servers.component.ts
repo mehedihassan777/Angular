@@ -11,6 +11,9 @@ export class ServersComponent {
   buttonHidden = false;
   buttonDisable = false;
   serverCreationStatus = 'No server was created';
+
+  ServerName = '';
+
   constructor() {
     setTimeout(() => {
       this.buttonHidden = true;
@@ -20,5 +23,9 @@ export class ServersComponent {
 
   onCreateServer() {
     this.serverCreationStatus = 'Server created';
+  }
+
+  onUpdateServerName(event: Event) {
+    this.ServerName = (<HTMLInputElement>event.target).value;
   }
 }
