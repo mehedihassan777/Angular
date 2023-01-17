@@ -8,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent {
-
+  buttonHidden = false;
+  buttonDisable = false;
+  constructor() {
+    setTimeout(() => {
+      this.buttonHidden = true;
+      this.buttonDisable = true;
+    }, 3000);
+  }
 }
