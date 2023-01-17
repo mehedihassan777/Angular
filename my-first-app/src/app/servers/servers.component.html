@@ -1,7 +1,7 @@
 <label>Server Name</label>
 <!-- <input class="form-control" (input)="onUpdateServerName($event)"> -->
 <!-- <p>This is Two Way Data Binding</p> -->
-<input class="form-control" [(ngModel)]="ServerName">
+<input class="form-control" [(ngModel)]="serverName">
 <!-- <p>{{ ServerName }}</p> -->
 <div [hidden]="buttonHidden">
     <button class="btn btn-primary">This Button Will Hide in 3 seconds</button><br><br>
@@ -9,6 +9,7 @@
 <button class="btn btn-primary" [disabled]="!buttonDisable" (click)="onCreateServer()">This Button Will Enabled in 3
     seconds</button>
 <!-- <p [innerHTML]="buttonDisable"></p> -->
-<p>{{ serverCreationStatus }}</p>
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
 <app-server></app-server>
 <app-server></app-server>
