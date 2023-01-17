@@ -1,9 +1,10 @@
 <button class="btn btn-success" (click)="displayDetails()">Display Details</button>
 <p [hidden]="!displayDetailsHide">Secret Password = Tuna</p>
-<div *ngFor="let count of countArray">
-    <p *ngIf="count<5; else noFive">Button Clicked = {{ count }}</p>
+<div *ngFor="let count of countArray; let i = index">
+    <p *ngIf="i<4; else noFive">Button Clicked = {{ count }}</p>
     <ng-template #noFive>
-        <p [ngStyle]="{backgroundColor: count>=5 ? 'blue' : ''}" [ngClass]="{online: count>=5}">Button Clicked = {{ count }}</p>
+        <p [ngStyle]="{backgroundColor: i>3 ? 'blue' : ''}" [ngClass]="{online: i>3}">Button Clicked = {{
+            count }}</p>
     </ng-template>
 </div>
 

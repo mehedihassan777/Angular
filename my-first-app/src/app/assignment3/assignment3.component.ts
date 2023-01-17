@@ -7,12 +7,12 @@ import { Component } from '@angular/core';
 })
 export class Assignment3Component {
   displayDetailsHide = false;
-  buttonClicked = 0;
-  countArray: Array<number> = [];
+  //buttonClicked = 0;
+  countArray: Array<Date> = [];
 
   displayDetails() {
-    this.buttonClicked += 1;
-    this.countArray.push(this.buttonClicked);
+    //this.buttonClicked += 1;
+    this.countArray.push(new Date());
     if (this.displayDetailsHide)
       this.displayDetailsHide = false;
     else
