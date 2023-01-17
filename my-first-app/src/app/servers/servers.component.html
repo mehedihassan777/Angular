@@ -1,5 +1,7 @@
 <label>Server Name</label>
-<input class="form-control" (input)="onUpdateServerName($event)">
+<!-- <input class="form-control" (input)="onUpdateServerName($event)"> -->
+<!-- <p>This is Two Way Data Binding</p> -->
+<input class="form-control" [(ngModel)]="ServerName">
 <p>{{ ServerName }}</p>
 <div [hidden]="buttonHidden">
     <button class="btn btn-primary">This Button Will Hide in 3 seconds</button><br><br>
