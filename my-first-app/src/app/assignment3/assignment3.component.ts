@@ -22,7 +22,7 @@ export class Assignment3Component {
       this.displayDetailsHide = true;
   }
 
-  getBgColote() {
+  getBgColor() {
     if (!this.lessFive) {
       return 'blue';
     }
