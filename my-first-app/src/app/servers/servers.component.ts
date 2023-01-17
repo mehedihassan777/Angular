@@ -10,10 +10,15 @@ import { Component } from '@angular/core';
 export class ServersComponent {
   buttonHidden = false;
   buttonDisable = false;
+  serverCreationStatus = 'No server was created';
   constructor() {
     setTimeout(() => {
       this.buttonHidden = true;
       this.buttonDisable = true;
     }, 3000);
+  }
+
+  onCreateServer() {
+    this.serverCreationStatus = 'Server created';
   }
 }
