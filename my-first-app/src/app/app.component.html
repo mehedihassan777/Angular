@@ -10,4 +10,12 @@
     <h3 appBasicHighlight>Decorate this with Basic Directive</h3>
     <h3 [appBetterHighlight]="'green'" changeColor="blue">Decorate this with Better Directive</h3>
     <h3 [appBetterHighlight] [changeColor]="'blue'">Decorate this with Better Directive</h3>
+
+    <div [ngSwitch]="value[2]">
+        <p *ngSwitchCase="5">The Value is 5</p>
+        <p *ngSwitchCase="3">The Value is 3</p>
+        <p *ngSwitchCase="2">The Value is 2</p>
+        <p *ngSwitchCase="9">The Value is 9</p>
+    </div>
+
 </div>
