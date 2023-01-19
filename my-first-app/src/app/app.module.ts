@@ -9,6 +9,8 @@ import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { Assignment2Component } from './assignment2/assignment2.component';
 import { Assignment3Component } from './assignment3/assignment3.component';
+import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
+import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { Assignment3Component } from './assignment3/assignment3.component';
     WarningAlertComponent,
     SuccessAlertComponent,
     Assignment2Component,
-    Assignment3Component
+    Assignment3Component,
+    BasicHighlightDirective,
+    BetterHighlightDirective
   ],
   imports: [
     BrowserModule,
