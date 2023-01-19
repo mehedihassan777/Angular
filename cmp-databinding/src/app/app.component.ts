@@ -24,5 +24,15 @@ export class AppComponent {
     });
   }
 
+  even: number[] = [];
+  odd: number[] = [];
+  saveNumbers(inp: number) {
+    if (inp % 2 === 0) {
+      this.even.push(inp);
+    }
+    else
+      this.odd.push(inp);
+  }
+
 
 }

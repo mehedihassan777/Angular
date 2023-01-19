@@ -1,11 +1,29 @@
-<div class="container">
+<!-- <div class="container">
   <app-cockpit (serverCreated)="onServerAdded($event)" (bpCreated)="onBluePrintAdded($event)"></app-cockpit>
   <hr>
   <div class="row">
-    <div class="col-xs-12">
-      <!-- <app-server-element *ngFor="let serverElement of serverElements" [element]="serverElement"></app-server-element> -->
-      <app-server-element *ngFor="let serverElement of serverElements"
-        [serElement]="serverElement"></app-server-element>
+    <div class="col-xs-12"> -->
+<!-- <app-server-element *ngFor="let serverElement of serverElements" [element]="serverElement"></app-server-element> -->
+<!-- <app-server-element *ngFor="let serverElement of serverElements" [serElement]="serverElement">
+
+        <p>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+        </p>
+
+      </app-server-element>
+    </div>
+  </div>
+</div> -->
+
+<app-game-control (gameScores)="saveNumbers($event)"></app-game-control>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <app-even *ngFor="let item of even" [even]="item"></app-even>
+    </div>
+    <div class="col-xs-6">
+      <app-odd *ngFor="let item of odd" [odd]="item"></app-odd>
     </div>
   </div>
 </div>
