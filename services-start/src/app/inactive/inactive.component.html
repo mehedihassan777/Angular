@@ -1,0 +1,4 @@
+<h2>Inactive Users</h2>
+<div class="row" *ngFor="let user of users; let id = index">
+    <p *ngIf="user.status === 'inactive'">{{ user.name }} | <a (click)="changeStatus(id)">Set to Active</a></p>
+</div>
