@@ -1,18 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
+import { ShoppingListService } from './shopping-list.service';
 
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
-  styleUrls: ['./shopping-list.component.css']
+  styleUrls: ['./shopping-list.component.css'],
 })
-export class ShoppingListComponent {
-  ingredients: Ingredient[] = [
-    new Ingredient('Apple', 5),
-    new Ingredient('Tomatoes', 10)
-  ];
+export class ShoppingListComponent implements DoCheck{
+  ingredients: Ingredient[] = [];
 
-  saveNewIngredient(value: Ingredient) {
-    this.ingredients.push(value);
+  constructor(private shoLiSer: ShoppingListService) {
+    this.ingredients = this.shoLiSer.getIngredient();
+  }
+
+  ngDoCheck(): void {
+    this.ingredients = this.shoLiSer.getIngredient();
   }
 }
