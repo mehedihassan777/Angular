@@ -8,7 +8,9 @@ import { LoggingService } from '../logging.service';
   styleUrls: ['./new-account.component.css'],
 })
 export class NewAccountComponent {
-  constructor(private logSer: LoggingService, private accSer: AccountService) { }
+  constructor(private logSer: LoggingService, private accSer: AccountService) {
+    this.accSer.statusUpdated.subscribe((statue: string) => alert('New Status: ' + statue));
+  }
   onCreateAccount(accountName: string, accountStatus: string) {
     this.accSer.addAccount(accountName, accountStatus);
   }
