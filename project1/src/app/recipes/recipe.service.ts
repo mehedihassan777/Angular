@@ -12,7 +12,11 @@ export class RecipeService {
         new Recipe('A Test Recipe', 'This is simply a test', 'https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/beefstewwithdumpling_87333_16x9.jpg', [new Ingredient('Meat', 1), new Ingredient('potato', 5)])
     ];
 
-    getRecipe() {
+    getRecipes() {
         return this.recipes.slice();
+    }
+
+    getRecipe(i: number) {
+        return this.recipes[i];
     }
 }
