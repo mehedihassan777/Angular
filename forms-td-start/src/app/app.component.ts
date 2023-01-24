@@ -11,6 +11,14 @@ export class AppComponent {
   @ViewChild('f') signupForm: NgForm;
   answer = '';
   genders = ['male', 'female'];
+  user = {
+    username: '',
+    email: '',
+    secret: '',
+    questionAnswer: '',
+    gender: ''
+
+  };
 
   suggestUserName() {
     const suggestedName = 'Superuser';
@@ -22,6 +30,8 @@ export class AppComponent {
   }
 
   onSubmit() {
-    console.log(this.signupForm);
+    this.user = this.signupForm.value;
+    this.user.username = this.signupForm.value.userData.username;
+    this.user.email = this.signupForm.value.userData.email;
   }
 }
