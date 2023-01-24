@@ -5,12 +5,12 @@
         <div id="user-data">
           <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" id="username" ngModel name="username" class="form-control">
+            <input type="text" id="username" ngModel name="username" required class="form-control">
           </div>
           <button class="btn btn-default" type="button">Suggest an Username</button>
           <div class="form-group">
             <label for="email">Mail</label>
-            <input type="email" id="email" ngModel name="email" class="form-control">
+            <input type="email" id="email" ngModel name="email" required email class="form-control">
           </div>
         </div>
         <div class="form-group">
@@ -20,7 +20,7 @@
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" [disabled]="!f.valid" type="submit">Submit</button>
       </form>
     </div>
   </div>
