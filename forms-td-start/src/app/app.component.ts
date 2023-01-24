@@ -33,5 +33,7 @@ export class AppComponent {
     this.user = this.signupForm.value;
     this.user.username = this.signupForm.value.userData.username;
     this.user.email = this.signupForm.value.userData.email;
+
+    this.signupForm.reset();
   }
 }
