@@ -15,6 +15,6 @@ export class AppComponent {
   }
 
   onSubmit() {
-    console.log(this.signupForm.value);
+    console.log(this.signupForm);
   }
 }
