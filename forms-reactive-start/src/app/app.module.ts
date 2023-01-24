@@ -4,14 +4,21 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AssignmentComponent } from './assignment/assignment.component';
+import { RouterModule, Routes } from '@angular/router';
 
+const appRoutes: Routes = [
+  { path: 'assignment', component: AssignmentComponent }
+];
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AssignmentComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

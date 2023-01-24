@@ -1,0 +1,16 @@
+<form class="form-group" [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+    <label>Project Name</label>
+    <input class="form-control" formControlName="projectname">
+    <label>Email</label>
+    <input class="form-control" formControlName="email">
+    <label>Project Status</label>
+    <select formControlName="status" class="form-control">
+        <option class="form-control" value="Stable" [selected]="projectForm.get('status').value == 'Stable'">Stable
+        </option>
+        <option class="form-control" value="Critical" [selected]="projectForm.get('status').value == 'Critical'">
+            Critical</option>
+        <option class="form-control" value="Finished" [selected]="projectForm.get('status').value == 'Finished'">
+            Finished</option>
+    </select><br>
+    <button type="submit" (click)="onSubmit()" [disabled]="!projectForm.valid" class="btn btn-success">Submit</button>
+</form>
