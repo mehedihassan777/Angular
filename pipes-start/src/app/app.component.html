@@ -5,12 +5,17 @@
       <br>
       <br>
       <button type="button" class="btn btn-success" (click)="onAddServer()">Add server</button>
+      <br><br>
+      <hr>
+      <h1>App Status: {{ appStatus | async }}</h1>
+      <hr>
       <ul class="list-group">
-        <li class="list-group-item" *ngFor="let server of servers | filter:filteredStatus:'status'" [ngClass]="getStatusClasses(server)">
+        <li class="list-group-item" *ngFor="let server of servers "
+          [ngClass]="getStatusClasses(server)">
           <span class="badge">
             {{ server.status }}
           </span>
-          <strong>{{ server.name | shorten:13}}</strong> | {{ server.instanceType | uppercase }} | {{ server.started |
+          <strong>{{ server.name | shorten:13}}</strong> | {{ server.instanceType | reverse | uppercase }} | {{ server.started |
           date:'fullDate' | uppercase}}
         </li>
       </ul>
