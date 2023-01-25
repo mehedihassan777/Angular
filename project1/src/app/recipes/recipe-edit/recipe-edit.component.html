@@ -25,7 +25,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <img src = "{{ inputImgScr }}" class="img-responsive">
+                    <img src="{{ inputImgScr }}" class="img-responsive">
                 </div>
             </div>
             <div class="row">
@@ -37,10 +37,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12">
-                    <div class="row">
+                <div class="col-xs-12" formArrayName="ingredients" >
+                    <div class="row" *ngFor="let ingredientCtrl of controls; let i = index" [formGroupName]="i">
                         <div class="col-xs-8">
-                            <input class="form-control" type="text" formControlName="ingName">
+                            <input class="form-control" type="text" formControlName="name">
                         </div>
                         <div class="col-xs-2">
                             <input class="form-control" type="number" formControlName="amount">
