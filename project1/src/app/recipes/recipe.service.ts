@@ -5,6 +5,7 @@ import { Recipe } from "./recipe.model";
 export class RecipeService {
 
     selectedRecipe = new Subject<Recipe>();
+    recipeChanged = new Subject<Recipe[]>();
 
     private recipes: Recipe[] = [
         new Recipe('A Test Recipe', 'This is simply a test', 'https://www.indianhealthyrecipes.com/wp-content/uploads/2019/11/samosa-recipe-500x375.jpg', [new Ingredient('Meat', 1), new Ingredient('potato', 5)]),
@@ -18,5 +19,20 @@ export class RecipeService {
 
     getRecipe(i: number) {
         return this.recipes[i];
+    }
+
+    addRecipe(recipe: Recipe) {
+        this.recipes.push(recipe);
+        this.recipeChanged.next(this.recipes.slice());
+    }
+
+    updateRecipe(index: number, recipe: Recipe) {
+        this.recipes[index] = recipe;
+        this.recipeChanged.next(this.recipes.slice());
+    }
+
+    deleteRecipe(index: number) {
+        this.recipes.splice(index, 1);
+        this.recipeChanged.next(this.recipes.slice());
     }
 }
