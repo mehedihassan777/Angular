@@ -1,10 +1,10 @@
-import { EventEmitter } from "@angular/core";
+import { Subject } from "rxjs";
 import { Ingredient } from "../shared/ingredient.model";
 import { Recipe } from "./recipe.model";
 
 export class RecipeService {
 
-    selectedRecipe = new EventEmitter<Recipe>();
+    selectedRecipe = new Subject<Recipe>();
 
     private recipes: Recipe[] = [
         new Recipe('A Test Recipe', 'This is simply a test', 'https://www.indianhealthyrecipes.com/wp-content/uploads/2019/11/samosa-recipe-500x375.jpg', [new Ingredient('Meat', 1), new Ingredient('potato', 5)]),

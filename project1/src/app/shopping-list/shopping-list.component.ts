@@ -7,11 +7,15 @@ import { ShoppingListService } from './shopping-list.service';
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.css'],
 })
-export class ShoppingListComponent implements DoCheck{
+export class ShoppingListComponent implements DoCheck {
   ingredients: Ingredient[] = [];
 
   constructor(private shoLiSer: ShoppingListService) {
     this.ingredients = this.shoLiSer.getIngredient();
+  }
+
+  onEditItem(id: number) {
+    this.shoLiSer.startedEditing.next(id);
   }
 
   ngDoCheck(): void {

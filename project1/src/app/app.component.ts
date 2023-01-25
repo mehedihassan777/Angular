@@ -7,10 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'project1';
-
-  selectedFeature = "default";
-  onNavigate(value: string) {
-    this.selectedFeature = value;
-  }
 }
 
