@@ -48,6 +48,11 @@ export class AppComponent implements OnInit, OnDestroy {
     this.postSer.deletePosts().subscribe(() => { }, error => { this.error = error.message });
     this.loadedPosts = [];
   }
+
+  onHandleError() {
+    this.error = null;
+  }
+
   ngOnDestroy(): void {
     this.errorSub.unsubscribe();
   }
